@@ -162,7 +162,7 @@ const RegisterForm = ({ user }: { user: User }) => {
               renderSkeleton={(field) => (
                 <FormControl>
                   <RadioGroup
-                    className="flex h-11 gap-6 xl:justify-between"
+                    className="flex h-11 gap-6 xl:justify-between text-white selection:text-white"
                     onValueChange={field.onChange}
                     defaultValue={field.value}
                   >
@@ -234,7 +234,7 @@ const RegisterForm = ({ user }: { user: User }) => {
           >
             {Doctors.map((doctor, i) => (
               <SelectItem key={doctor.name + i} value={doctor.name}>
-                <div className="flex cursor-pointer items-center gap-2">
+                <div className="flex cursor-pointer items-center gap-2 ">
                   <Image
                     src={doctor.image}
                     width={32}
@@ -242,7 +242,7 @@ const RegisterForm = ({ user }: { user: User }) => {
                     alt="doctor"
                     className="rounded-full border border-dark-500"
                   />
-                  <p>{doctor.name}</p>
+                  <p className="text-white hover:text-black">{doctor.name}</p>
                 </div>
               </SelectItem>
             ))}
@@ -319,7 +319,11 @@ const RegisterForm = ({ user }: { user: User }) => {
             placeholder="Select identification type"
           >
             {IdentificationTypes.map((type, i) => (
-              <SelectItem key={type + i} value={type}>
+              <SelectItem
+                key={type + i}
+                value={type}
+                className="text-white hover:text-black"
+              >
                 {type}
               </SelectItem>
             ))}
